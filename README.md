@@ -256,7 +256,3 @@ Open [`PhysioGraph_Final_Colab.ipynb`](PhysioGraph_Final_Colab.ipynb) in Google 
 This project is a retrospective machine learning research prototype developed on de-identified data from the **MIMIC-IV v3.1** database (PhysioNet). It is intended strictly for academic research and methodological validation. It is **not** a certified medical device and is **not** approved for direct clinical diagnosis or patient care without prospective validation.
 
 ---
-
-## 📜 License
-
-This project is open-source under the [MIT License](LICENSE).
