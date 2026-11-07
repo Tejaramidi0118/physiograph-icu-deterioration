@@ -1,0 +1,26 @@
+{
+  "method": "nonparametric cluster bootstrap by stay_id; sampled stays with replacement; all windows from each sampled stay retained",
+  "n_bootstrap_requested": 1000,
+  "n_bootstrap_valid": 1000,
+  "attempts": 1000,
+  "seed": 42,
+  "n_stays_original": 4781,
+  "n_windows_original": 21968,
+  "positive_windows_original": 10984,
+  "prevalence_original": 0.5,
+  "point_estimates": {
+    "auroc": 0.8327348469919035,
+    "auprc": 0.8478475268374339
+  },
+  "confidence_intervals_95_percent_percentile": {
+    "auroc": {
+      "lower": 0.8218783238557166,
+      "upper": 0.844272163540023
+    },
+    "auprc": {
+      "lower": 0.836245676282995,
+      "upper": 0.8586963648251015
+    }
+  },
+  "interpretation_note": "These percentile intervals quantify variation under resampling ICU stays. They do not account for model-training randomness, dataset shift, label uncertainty, or the fact that multiple windows within a stay may represent overlapping prediction horizons."
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PhysioGraph — explainable spatio-temporal graph model for ICU deterioration detection. Retrospective MIMIC-IV research prototype.">
+  <title>PhysioGraph</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232d5a96'/%3E%3Ccircle cx='10' cy='11' r='3' fill='white'/%3E%3Ccircle cx='22' cy='11' r='3' fill='white'/%3E%3Ccircle cx='16' cy='22' r='3' fill='white'/%3E%3Cpath d='M10 11L16 22L22 11' stroke='white' stroke-width='1.6' fill='none'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+<div class="app" id="app">
+  <aside class="sidebar" id="sidebar" aria-label="Primary">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#2d5a96"/>
+        <path d="M10 11L16 22L22 11M10 11L22 11" stroke="#fff" stroke-width="1.5" fill="none" opacity=".7"/>
+        <circle cx="10" cy="11" r="3" fill="#fff"/><circle cx="22" cy="11" r="3" fill="#fff"/><circle cx="16" cy="22" r="3" fill="#9fd3cf"/>
+      </svg>
+      <div>
+        <div class="brand-name">PhysioGraph</div>
+        <div class="brand-sub">ICU deterioration research</div>
+      </div>
+    </div>
+    <nav>
+      <ul class="nav" id="nav"></ul>
+    </nav>
+    <div class="sidebar-data" id="sidebarData"></div>
+    <div class="sidebar-foot">
+      <strong>Research prototype</strong>
+      Retrospective analysis of de-identified MIMIC-IV data. Not clinically validated and not for patient care.
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="page-head">
+        <span class="page-icon" id="pageIcon" aria-hidden="true"></span>
+        <div class="page-title">
+          <span class="crumb" id="crumb">PhysioGraph</span>
+          <h1 id="pageTitle">Overview</h1>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="stay-switch" id="staySwitch">
+          <button class="icon-btn" id="stayPrev" aria-label="Previous stay" title="Previous stay ([)"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="stay-btn" id="stayBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="stayPop">
+            <span class="stay-avatar" id="stayAvatar"></span>
+            <span class="stay-text"><span class="stay-k">ICU stay</span><span class="stay-v" id="stayLabel"></span></span>
+            <svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <button class="icon-btn" id="stayNext" aria-label="Next stay" title="Next stay (])"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="stay-pop" id="stayPop" hidden>
+            <div class="stay-search">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+              <input id="staySearch" type="search" placeholder="Search stay ID or care unit" aria-label="Search stays" autocomplete="off">
+              <kbd>/</kbd>
+            </div>
+            <div class="stay-list" id="stayList" role="listbox" aria-label="ICU stays"></div>
+            <div class="stay-foot"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Esc</kbd> close</span></div>
+          </div>
+        </div>
+        <span class="chip real" id="sourceChip"><span class="dot"></span><span></span></span>
+        <span class="chip ctx status" title="Retrospective analysis of a static dataset. No live data feed is connected."><span class="dot"></span>Retrospective · no live feed</span>
+      </div>
+    </header>
+
+    <main class="page" id="page" tabindex="-1"></main>
+  </div>
+</div>
+
+<script src="js/data/project.js"></script>
+<script src="js/data/mimic-demo-cases.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/charts.js"></script>
+<script src="js/components/body.js"></script>
+<script src="js/components/graph.js"></script>
+<script src="js/components/panels.js"></script>
+<script src="js/pages/clinical.js"></script>
+<script src="js/pages/analysis.js"></script>
+<script src="js/pages/research.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

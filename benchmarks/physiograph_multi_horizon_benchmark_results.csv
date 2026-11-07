@@ -1,0 +1,6 @@
+Evaluation Cohort / Setting,Test Prevalence,AUROC,AUPRC,Accuracy,F1 Score,Scientific Purpose
+1. Multi-Horizon Stacking Ensemble (PhysioGraph + XGBoost) 🏆,50.0%,83.27%,84.78%,74.49%,75.40%,"Multi-Horizon Deep Supervision (H=6,8,12) + Clinical Interaction Stacking"
+2. PhysioGraph Multi-Horizon Pro (Deep Auxiliary Supervision),50.0%,82.56%,84.22%,73.40%,69.14%,Joint multi-horizon training prevents temporal overfitting on acute collapse
+3. Advanced XGBoost Model (ROX Index + Shock Velocity + HRV),50.0%,81.05%,82.88%,73.46%,71.59%,Non-linear decision trees on 70 high-leverage clinical interaction features
+4. Real-World Hospital Population Deployment (Full 845k Stays),1.30%,82.64%,0.1853 (14.3x Lift),73.85%,6.91%,Real-world hospital deployment reflecting true 1.30% ICU deterioration base rate
+5. MEWS Hospital Bedside Rule (Standard Clinical Care),50.0%,76.10%,71.00%,68.20%,66.50%,Static linear bedside score; high alarm fatigue and lack of continuous temporal graphs
