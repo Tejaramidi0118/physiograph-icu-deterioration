@@ -17,21 +17,25 @@ env/
 ENV/
 
 # ==============================================================================
-# Data Files & Generated Predictions
+# Data Files & Generated Predictions (Private / Re-creatable)
 # ==============================================================================
 /data/
+data/
 /predictions/
+predictions/
 *.parquet
 *.h5
 *.feather
 *.tar.gz
 *.zip
 *.rar
+*.csv.gz
 
 # ==============================================================================
-# Model Checkpoints and Serialized Weights (Shared privately)
+# Model Checkpoints and Serialized Weights (Shared privately, DO NOT PUSH)
 # ==============================================================================
 /models/
+models/
 *.pt
 *.pth
 *.bin
@@ -40,32 +44,43 @@ ENV/
 *.pkl
 
 # ==============================================================================
-# Reports, Presentations & Build Artifacts (Per project instructions)
+# Academic Thesis, Reports & Presentations (DO NOT PUSH TO CODE REPO)
 # ==============================================================================
+/S7 THESIS/
+S7 THESIS/
 /report/
+report/
+/report_changes/
+report_changes/
 *.pdf
 *.pptx
 *.ppt
 *.docx
 *.tex
+*.bib
 *.aux
 *.bbl
 *.blg
 *.log
 *.out
 *.toc
+*.lof
+*.lot
 *.synctex.gz
 *.fls
 *.fdb_latexmk
 .physiograph-ppt-build/
 
 # ==============================================================================
-# Jupyter Notebook Checkpoints
+# Jupyter Notebooks & Checkpoints
 # ==============================================================================
+/notebooks/
+notebooks/
+*.ipynb
 .ipynb_checkpoints/
 
 # ==============================================================================
-# OS Metadata & Miscellaneous
+# OS Metadata & Local Environment
 # ==============================================================================
 .DS_Store
 .DS_Store?
